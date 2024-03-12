@@ -1,3 +1,5 @@
+//Java program to print a specific grid pattern.
+
 public class PrintaGrid
 {
 	public static void main(String args[])

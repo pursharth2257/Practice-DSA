@@ -1,3 +1,5 @@
+//Java Program to Sort a numeric and a string Array.
+
 import java.util.Arrays;
 
 public class SortArrays

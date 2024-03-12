@@ -1,3 +1,5 @@
+//Java program to find the total sum of all the array values.
+
 public class SumOfArrayValues
 {
 	public static void main(String args[])
