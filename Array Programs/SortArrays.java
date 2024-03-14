@@ -1,4 +1,4 @@
-//Java Program to Sort a numeric and a string Array.
+//Java Program to Sort a numeric and a String Array.
 
 import java.util.Arrays;
 
