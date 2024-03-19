@@ -78,6 +78,46 @@ public class singlyLinkedList
 		current.next = newNode;
 	}
 	
+	public void insertSpecificNode(int num, int position)
+	{
+		ListNode node = new ListNode(num);
+		
+		if (position == 1)
+		{
+			node.next = head;
+			head = node;
+		}
+		
+		else
+		{
+			ListNode previous = head;
+			int count = 1;
+			
+			while (count < position - 1)
+			{
+				previous = previous.next;
+				count++;
+			}
+			
+			ListNode current = previous.next;
+			node.next = current;
+			previous.next = node;
+		}
+	}
+	
+	public ListNode deleteFirstNode()
+	{
+		if (head == null)
+		{
+			return null;
+		}
+		
+		ListNode temp = head;
+		head = head.next;
+		temp.next = null;
+		return temp;
+	}
+	
 	public static void main(String args[])
 	{
 		singlyLinkedList sll = new singlyLinkedList();
@@ -102,6 +142,14 @@ public class singlyLinkedList
 		sll.display();
 		
 		sll.insertendNode(9);
+		
+		sll.display();
+		
+		sll.insertSpecificNode(5, 4);
+		
+		sll.display();
+		
+		sll.deleteFirstNode();
 		
 		sll.display();
 	}
