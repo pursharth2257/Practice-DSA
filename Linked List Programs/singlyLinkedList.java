@@ -1,7 +1,10 @@
-// Java program to create, display and length singly linked list.
+// Java program for singly linked list.
 
 public class singlyLinkedList
 {
+	
+	// the code to implement linked list.
+	
 	private ListNode head;
 	
 	private static class ListNode
@@ -16,6 +19,8 @@ public class singlyLinkedList
 		}
 	}
 	
+	// function to display the linked list.
+	
 	public void display()
 	{
 		ListNode current = head;
@@ -27,6 +32,8 @@ public class singlyLinkedList
 		}
 		System.out.println("null");
 	}
+	
+	// function to know the length of the linked list.
 	
 	public int count()
 	{
@@ -40,6 +47,35 @@ public class singlyLinkedList
 			current = current.next;
 		}
 		return count;
+	}
+	
+	// function to add new node at start of linked list.
+	
+	public void insertFirstNode(int num)
+	{
+		ListNode newNode = new ListNode(num);
+		newNode.next = head;
+		head = newNode;
+	}
+	
+	public void insertendNode(int num)
+	{
+		ListNode newNode = new ListNode(num);
+		
+		if (head == null)
+		{
+			head = newNode;
+			return;
+		}
+		
+		ListNode current = head;
+		
+		while (null != current.next)
+		{
+			current = current.next;
+		}
+		
+		current.next = newNode;
 	}
 	
 	public static void main(String args[])
@@ -60,5 +96,13 @@ public class singlyLinkedList
 		sll.display();
 		
 		System.out.println("The length of the linked list is :" + sll.count());
+		
+		sll.insertFirstNode(2);
+		
+		sll.display();
+		
+		sll.insertendNode(9);
+		
+		sll.display();
 	}
 }
