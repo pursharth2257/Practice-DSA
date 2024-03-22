@@ -160,6 +160,26 @@ public class singlyLinkedList
 		}
 	}
 	
+	public static boolean searchElement(ListNode head, int num)
+	{
+		if (head == null)
+		{
+			return false;
+		}
+		
+		ListNode current = head;
+		
+		while (current != null)
+		{
+			if (current.data == num)
+			{
+				return true;
+			}
+			current = current.next;
+		}
+		return false;
+	}
+	
 	public static void main(String args[])
 	{
 		singlyLinkedList sll = new singlyLinkedList();
@@ -202,5 +222,14 @@ public class singlyLinkedList
 		sll.deleteSpecificNode(2);
 		
 		sll.display();
+		
+		if (sll.searchElement(head, 11))
+		{
+			System.out.println("Element found!!");
+		}
+		else
+		{
+			System.out.println("Element not found!!");
+		}
 	}
 }
