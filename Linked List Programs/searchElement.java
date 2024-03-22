@@ -1,3 +1,5 @@
+// Java program to search an element in a singly Linked list.
+
 public class searchElement
 {
 	private ListNode head;
