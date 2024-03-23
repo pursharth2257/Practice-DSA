@@ -1,10 +1,7 @@
-// Java program for implementing and displaying singly linked list.
 
-public class singlyLinkedList
+
+public class deleteFirstNode
 {
-	
-	// the code to implement linked list.
-	
 	private ListNode head;
 	
 	private static class ListNode
@@ -19,9 +16,7 @@ public class singlyLinkedList
 		}
 	}
 	
-	// function to display the linked list.
-	
-	public void display()
+	public void display(ListNode head)
 	{
 		ListNode current = head;
 		
@@ -30,24 +25,41 @@ public class singlyLinkedList
 			System.out.print(current.data + " --> ");
 			current = current.next;
 		}
-		System.out.println("null");
+		System.out.println(current);
+	}
+	
+	public ListNode deleteFirst()
+	{
+		if (head == null)
+		{
+			return null;
+		}
+		
+		ListNode temp = head;
+		head = head.next;
+		temp.next = null;
+		return temp;
 	}
 	
 	public static void main(String args[])
 	{
-		singlyLinkedList sll = new singlyLinkedList();
+		deleteFirstNode dfn = new deleteFirstNode();
 		
-		sll.head = new ListNode(10);
+		dfn.head = new ListNode(10);
 		ListNode second = new ListNode(1);
 		ListNode third = new ListNode(8);
 		ListNode fourth = new ListNode(11);
 		
 		// connecting them together to form a chain :-
 		
-		sll.head.next = second;
+		dfn.head.next = second;
 		second.next = third;
 		third.next = fourth;
 		
-		sll.display();
+		dfn.display(dfn.head);
+		
+		dfn.deleteFirst();
+		
+		dfn.display(dfn.head);
 	}
 }
