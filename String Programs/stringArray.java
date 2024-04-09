@@ -1,5 +1,6 @@
 // Java program to convert a string to a string array.
 
+import java.util.*;
 public class stringArray
 {
 	public static void toArray(String s)
